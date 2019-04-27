@@ -1,0 +1,146 @@
+/* pages/center/balance/balance.wxss */
+
+.top {
+  position: absolute;
+  /* bottom: 40px; */
+  bottom:0;
+  top: 0;
+  overflow-y: scroll;
+}
+
+.balance {
+  background: linear-gradient(to right, #fdc227, #fd9827);
+}
+
+.bg-2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.restful {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.restful .num {
+  font-size: 40pt;
+  height: 140px;
+  line-height: 180px;
+}
+
+.detail {
+  position: relative;
+  display: flex;
+  height: 100px;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.section {
+  width: 50%;
+  z-index: 100;
+  height: 50pt;
+  margin-top:40px;
+  font-size: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.section .num {
+  color: #333;
+}
+
+.section .word {
+  color: #999;
+}
+
+.seg {
+  width: 1px;
+  height: 25pt;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  background: #999;
+}
+
+.seg1 {
+  width: 100%;
+  height: 10pt;
+  background: #f4f4f4;
+  top: 170px;
+}
+
+.taocan-area {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.area {
+  width: 46%;
+  /* height: 76px; */
+  float: left;
+  margin-bottom: 15px;
+}
+
+.taocan {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  border: 2px solid #fd9728;
+  border-radius: 10px;
+  text-align: center;
+}
+.taocan .do{
+  font-size: 12px;
+}
+.taocan .price {
+  font-size: 20px;
+  margin-top: 5px;
+  font-family:DIN-Medium;
+}
+.taocan .number {
+  color: #ff405b;
+  font-family:DIN-Medium;
+}
+.taocan .han{
+  font-family: SourceHanSansCN-Regular;
+                        
+}
+/* .taocan:hover {
+  background: linear-gradient(to top, #fdc227, #fd9827);
+  border: none;
+  color: #fff;
+} */
+
+/* .taocan:hover .number {
+  color: #fff;
+} */
+
+.tips{
+  padding: 10px 15px 0;
+  color: #666;
+}
+
+.submit {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 0;
+  box-sizing: none;
+  color: #fff !important;
+  background: #fd9827 !important;
+  border: 1px solid #fd9827 !important;
+  margin: 0;
+}

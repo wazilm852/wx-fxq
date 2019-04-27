@@ -1,0 +1,9 @@
+<!--pages/bind/bindone.wxml-->
+<!-- 绑定第一步--获得用户微信头像，进行绑定/注册选择 -->
+
+<view class="avatar">
+  <image class="avatar-img" src="{{userInfo.avatarUrl}}"></image>
+</view>
+
+<navigator url="../bind/bind?title=navigate" hover-class="navigator-hover" class="btn orange">绑定已有账号</navigator>
+<navigator url="../register/register?title=navigate" hover-class="navigator-hover" class="btn">未有账号？请注册</navigator>

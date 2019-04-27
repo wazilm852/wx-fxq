@@ -1,0 +1,276 @@
+<!-- 合同管理首页 -->
+<!--pages/contract/contract.wxml-->
+<wxs src="../common/filter/filter.wxs" module='filter'></wxs>
+
+<!-- <template name="contractList">
+  <view class="list">
+    <block wx:key="unique" wx:for="{{contract}}">
+        <navigator url='/pages/contract/detail?contractid={{item.contractid}}&endtime={{item.endtime}}&pdfurl={{item.pdfurl}}&flag={{item.flag}}'>
+          <view class="contract">
+          <view class="con">
+            <text class="title">{{item.title}}</text>
+            <view class="signer">
+              <text class="sender">发</text>
+              <text class="conname">{{item.signatorynames[0]}}</text>
+              <text class="receiver">收</text>
+              <text class="conname">{{item.signatorynames[1]}}</text>
+            </view>
+          </view>
+          <view class='con-status'>
+            <text class="time">{{filter.dateFormat(item.endtime,'yyyy-MM-dd')}}</text>
+            <view class="status-content">
+              <text class="status" wx:if="{{item.flag == 1}}">待我签</text>
+              <text class="status" wx:elif="{{item.flag == 2}}">待他人签</text>
+              <text class="status" wx:elif="{{item.flag == 3}}">已完成</text>
+              <text class="status" wx:elif="{{item.flag == 4}}">我方拒签</text>
+              <text class="status" wx:elif="{{item.flag == 5}}">他人拒签</text>
+              <text class="status" wx:elif="{{item.flag == 6}}">已撤回</text>
+              <text class="status" wx:elif="{{item.flag == 7}}">已过期</text>
+            </view>
+          </view>
+        </view>
+        </navigator>
+    </block>
+  </view>
+</template> -->
+
+<van-tabs style="height:100%;" color="#fd9827" active="{{active}}" bind:change="changeswiper" bind:change="onChange" animated swipeable>
+  <van-tab title="全部">
+    <view wx:if="{{contractlist.contract.length > 0}}" class="list">
+      <block wx:key="unique" wx:for="{{contractlist.contract}}">
+          <navigator url='/pages/contract/detail?contractid={{item.contractid}}&endtime={{item.endtime}}&pdfurl={{item.pdfurl}}&status={{item.status}}'>
+            <view class="contract">
+            <view class="con">
+              <text class="title">{{item.title}}</text>
+              <view class="signer">
+                <text class="sender">发</text>
+                <text class="conname">{{item.signatorynames[0]}}</text>
+                <text class="receiver">收</text>
+                <text class="conname">{{item.signatorynames[1]}}</text>
+              </view>
+            </view>
+            <view class='con-status'>
+              <text class="time">{{filter.dateFormat(item.endtime,'yyyy-MM-dd')}}</text>
+              <view class="status-content">
+                <text class="status status1" wx:if="{{item.status == 0}}">待我签</text>
+                <text class="status status2" wx:elif="{{item.status == 1}}">待他签</text>
+                <text class="status status3" wx:elif="{{item.status == 2}}">已完成</text>
+                <text class="status status3" wx:elif="{{item.status == 3}}">我拒签</text>
+                <text class="status status3" wx:elif="{{item.status == 4}}">他拒签</text>
+                <text class="status status3" wx:elif="{{item.status == 6}}">已撤回</text>
+                <text class="status status3" wx:elif="{{item.status == 7}}">已过期</text>
+              </view>
+            </view>
+          </view>
+          </navigator>
+      </block>
+    </view>
+    <view wx:else style='text-align:center;'>
+      <image style='width:75px;height:76px;margin-top:30%;' src="/image/empty.png"></image>
+    </view>
+  </van-tab>
+  <van-tab  title="待我签">
+    <view wx:if="{{contractlist.contract.length > 0}}" class="list">
+      <block wx:key="unique" wx:for="{{contractlist.contract}}">
+          <navigator url='/pages/contract/detail?contractid={{item.contractid}}&endtime={{item.endtime}}&pdfurl={{item.pdfurl}}&status={{item.status}}'>
+            <view class="contract">
+            <view class="con">
+              <text class="title">{{item.title}}</text>
+              <view class="signer">
+                <text class="sender">发</text>
+                <text class="conname">{{item.signatorynames[0]}}</text>
+                <text class="receiver">收</text>
+                <text class="conname">{{item.signatorynames[1]}}</text>
+              </view>
+            </view>
+            <view class='con-status'>
+              <text class="time">{{filter.dateFormat(item.endtime,'yyyy-MM-dd')}}</text>
+              <view class="status-content">
+                <text class="status status1" wx:if="{{item.status == 0}}">待我签</text>
+                <text class="status status2" wx:elif="{{item.status == 1}}">待他签</text>
+                <text class="status status3" wx:elif="{{item.status == 2}}">已完成</text>
+                <text class="status status3" wx:elif="{{item.status == 3}}">我拒签</text>
+                <text class="status status3" wx:elif="{{item.status == 4}}">他拒签</text>
+                <text class="status status3" wx:elif="{{item.status == 6}}">已撤回</text>
+                <text class="status status3" wx:elif="{{item.status == 7}}">已过期</text>
+              </view>
+            </view>
+          </view>
+          </navigator>
+      </block>
+    </view>
+    <view wx:else style='text-align:center;'>
+      <image style='width:75px;height:76px;margin-top:30%;' src="/image/empty.png"></image>
+    </view>
+  </van-tab>
+  <van-tab  title="待他签">
+    <view wx:if="{{contractlist.contract.length > 0}}" class="list">
+      <block wx:key="unique" wx:for="{{contractlist.contract}}">
+          <navigator url='/pages/contract/detail?contractid={{item.contractid}}&endtime={{item.endtime}}&pdfurl={{item.pdfurl}}&status={{item.status}}'>
+            <view class="contract">
+            <view class="con">
+              <text class="title">{{item.title}}</text>
+              <view class="signer">
+                <text class="sender">发</text>
+                <text class="conname">{{item.signatorynames[0]}}</text>
+                <text class="receiver">收</text>
+                <text class="conname">{{item.signatorynames[1]}}</text>
+              </view>
+            </view>
+            <view class='con-status'>
+              <text class="time">{{filter.dateFormat(item.endtime,'yyyy-MM-dd')}}</text>
+              <view class="status-content">
+                <text class="status status1" wx:if="{{item.status == 0}}">待我签</text>
+                <text class="status status2" wx:elif="{{item.status == 1}}">待他签</text>
+                <text class="status status3" wx:elif="{{item.status == 2}}">已完成</text>
+                <text class="status status3" wx:elif="{{item.status == 3}}">我拒签</text>
+                <text class="status status3" wx:elif="{{item.status == 4}}">他拒签</text>
+                <text class="status status3" wx:elif="{{item.status == 6}}">已撤回</text>
+                <text class="status status3" wx:elif="{{item.status == 7}}">已过期</text>
+              </view>
+            </view>
+          </view>
+          </navigator>
+      </block>
+    </view>
+    <view wx:else style='text-align:center;'>
+      <image style='width:75px;height:76px;margin-top:30%;' src="/image/empty.png"></image>
+    </view>
+  </van-tab>
+  <van-tab title="已完成">
+    <view wx:if="{{contractlist.contract.length > 0}}" class="list">
+      <block wx:key="unique" wx:for="{{contractlist.contract}}">
+          <navigator url='/pages/contract/detail?contractid={{item.contractid}}&endtime={{item.endtime}}&pdfurl={{item.pdfurl}}&status={{item.status}}'>
+            <view class="contract">
+            <view class="con">
+              <text class="title">{{item.title}}</text>
+              <view class="signer">
+                <text class="sender">发</text>
+                <text class="conname">{{item.signatorynames[0]}}</text>
+                <text class="receiver">收</text>
+                <text class="conname">{{item.signatorynames[1]}}</text>
+              </view>
+            </view>
+            <view class='con-status'>
+              <text class="time">{{filter.dateFormat(item.endtime,'yyyy-MM-dd')}}</text>
+              <view class="status-content">
+                <text class="status status1" wx:if="{{item.status == 0}}">待我签</text>
+                <text class="status status2" wx:elif="{{item.status == 1}}">待他签</text>
+                <text class="status status3" wx:elif="{{item.status == 2}}">已完成</text>
+                <text class="status status3" wx:elif="{{item.status == 3}}">我拒签</text>
+                <text class="status status3" wx:elif="{{item.status == 4}}">他拒签</text>
+                <text class="status status3" wx:elif="{{item.status == 6}}">已撤回</text>
+                <text class="status status3" wx:elif="{{item.status == 7}}">已过期</text>
+              </view>
+            </view>
+          </view>
+          </navigator>
+      </block>
+    </view>
+    <view wx:else style='text-align:center;'>
+      <image style='width:75px;height:76px;margin-top:30%;' src="/image/empty.png"></image>
+    </view>
+  </van-tab>
+  <van-tab title="已拒绝">
+    <view wx:if="{{contractlist.contract.length > 0}}" class="list">
+      <block wx:key="unique" wx:for="{{contractlist.contract}}">
+          <navigator url='/pages/contract/detail?contractid={{item.contractid}}&endtime={{item.endtime}}&pdfurl={{item.pdfurl}}&status={{item.status}}'>
+            <view class="contract">
+            <view class="con">
+              <text class="title">{{item.title}}</text>
+              <view class="signer">
+                <text class="sender">发</text>
+                <text class="conname">{{item.signatorynames[0]}}</text>
+                <text class="receiver">收</text>
+                <text class="conname">{{item.signatorynames[1]}}</text>
+              </view>
+            </view>
+            <view class='con-status'>
+              <text class="time">{{filter.dateFormat(item.endtime,'yyyy-MM-dd')}}</text>
+              <view class="status-content">
+                <text class="status status1" wx:if="{{item.status == 0}}">待我签</text>
+                <text class="status status2" wx:elif="{{item.status == 1}}">待他签</text>
+                <text class="status status3" wx:elif="{{item.status == 2}}">已完成</text>
+                <text class="status status3" wx:elif="{{item.status == 3}}">我拒签</text>
+                <text class="status status3" wx:elif="{{item.status == 4}}">他拒签</text>
+                <text class="status status3" wx:elif="{{item.status == 6}}">已撤回</text>
+                <text class="status status3" wx:elif="{{item.status == 7}}">已过期</text>
+              </view>
+            </view>
+          </view>
+          </navigator>
+      </block>
+    </view>
+    <view wx:else style='text-align:center;'>
+      <image style='width:75px;height:76px;margin-top:30%;' src="/image/empty.png"></image>
+    </view>
+  </van-tab>
+  <van-tab title="已撤回">
+    <view wx:if="{{contractlist.contract.length > 0}}" class="list">
+      <block wx:key="unique" wx:for="{{contractlist.contract}}">
+          <navigator url='/pages/contract/detail?contractid={{item.contractid}}&endtime={{item.endtime}}&pdfurl={{item.pdfurl}}&status={{item.status}}'>
+            <view class="contract">
+            <view class="con">
+              <text class="title">{{item.title}}</text>
+              <view class="signer">
+                <text class="sender">发</text>
+                <text class="conname">{{item.signatorynames[0]}}</text>
+                <text class="receiver">收</text>
+                <text class="conname">{{item.signatorynames[1]}}</text>
+              </view>
+            </view>
+            <view class='con-status'>
+              <text class="time">{{filter.dateFormat(item.endtime,'yyyy-MM-dd')}}</text>
+              <view class="status-content">
+                <text class="status status1" wx:if="{{item.status == 0}}">待我签</text>
+                <text class="status status2" wx:elif="{{item.status == 1}}">待他签</text>
+                <text class="status status3" wx:elif="{{item.status == 2}}">已完成</text>
+                <text class="status status3" wx:elif="{{item.status == 3}}">我拒签</text>
+                <text class="status status3" wx:elif="{{item.status == 4}}">他拒签</text>
+                <text class="status status3" wx:elif="{{item.status == 6}}">已撤回</text>
+                <text class="status status3" wx:elif="{{item.status == 7}}">已过期</text>
+              </view>
+            </view>
+          </view>
+          </navigator>
+      </block>
+    </view>
+    <view wx:else style='text-align:center;'>
+      <image style='width:75px;height:76px;margin-top:30%;' src="/image/empty.png"></image>
+    </view>
+  </van-tab>
+  <van-tab title="已过期">
+    <view wx:if="{{contractlist.contract.length > 0}}" class="list">
+      <block wx:key="unique" wx:for="{{contractlist.contract}}">
+          <navigator url='/pages/contract/detail?contractid={{item.contractid}}&endtime={{item.endtime}}&pdfurl={{item.pdfurl}}&status={{item.status}}'>
+            <view class="contract">
+            <view class="con">
+              <text class="title">{{item.title}}</text>
+              <view class="signer">
+                <text class="sender">发</text>
+                <text class="conname">{{item.signatorynames[0]}}</text>
+                <text class="receiver">收</text>
+                <text class="conname">{{item.signatorynames[1]}}</text>
+              </view>
+            </view>
+            <view class='con-status'>
+              <text class="time">{{filter.dateFormat(item.endtime,'yyyy-MM-dd')}}</text>
+              <view class="status-content">
+                <text class="status status1" wx:if="{{item.status == 0}}">待我签</text>
+                <text class="status status2" wx:elif="{{item.status == 1}}">待他签</text>
+                <text class="status status3" wx:elif="{{item.status == 2}}">已完成</text>
+                <text class="status status3" wx:elif="{{item.status == 3}}">我拒签</text>
+                <text class="status status3" wx:elif="{{item.status == 4}}">他拒签</text>
+                <text class="status status3" wx:elif="{{item.status == 6}}">已撤回</text>
+                <text class="status status3" wx:elif="{{item.status == 7}}">已过期</text>
+              </view>
+            </view>
+          </view>
+          </navigator>
+      </block>
+    </view>
+    <view wx:else style='text-align:center;'>
+      <image style='width:75px;height:76px;margin-top:30%;' src="/image/empty.png"></image>
+    </view>
+  </van-tab>
+</van-tabs>

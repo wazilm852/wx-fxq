@@ -1,0 +1,140 @@
+<!--index.wxml-->
+<wxs src="../common/filter/filter.wxs" module='filter'></wxs>
+
+<template name="login">
+  <view id="auth" class="contentinner">
+    <view class="start">
+      <!-- <image src="../../image/weixin.png" class="weixin"></image>
+      <image class='authicon' src="../../image/icon-auth.png"></image> -->
+      <image src="../../image/logo.png" class="logo"></image>
+    </view>
+    <view class="text-area">
+      <view class="text-one">登陆后开发者将获得以下权限</view>
+      <view class="text-two">
+        <view class="circle"></view>
+        <view class="text">获得你的公开信息（昵称、头像、地区及性别）</view>
+      </view>
+    </view>
+
+    <!-- <text class="tip">您即将使用放心签微信小程序，祝君使用愉快！</text> -->
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn-auth">授权登录</button>
+  </view>
+</template>
+
+<template name="home">
+  <view class="content">
+    <view class="bg-orange">
+      <image mode="widthFix" class="home-icon" src='{{bannerSrc}}'></image>
+    </view>
+    <view class="floor-one">
+      <view class="center">
+        <navigator open-type='reLaunch' url="/pages/contract/contract?type=0" class="one-section">
+          <!-- <image src="/image/home-waitme.png"></image> -->
+          <text class="con-num">{{waitmeNO}}</text>
+          <text class="con-status">待我签</text>
+        </navigator>
+        <navigator open-type='reLaunch' url="/pages/contract/contract?type=1" class="one-section">
+          <!-- <image src="/image/home-waitother.png"></image> -->
+          <text class="con-num">{{waitotherNO}}</text>
+          <text class="con-status">待他签</text>
+        </navigator>
+        <navigator open-type='reLaunch' url="/pages/contract/contract?type=2" class="one-section">
+          <!-- <image src="/image/home-complete.png"></image> -->
+          <text class="con-num">{{completeNO}}</text>
+          <text class="con-status">已完成</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <view class="floor-two">
+    <navigator class="two-section" url="/pages/center/template/template?active=1">
+      <view class="two-circle one">
+        <image src="../../image/bendiwenjian.png"></image>
+      </view>
+      <text>模板签署</text>
+    </navigator>
+    <!-- <navigator class="two-section" url="/pages/center/template/template?active=1">
+      <view class="two-circle two">
+        <image src="../../image/mobanqianshu.png"></image>
+      </view>
+      <text>个人模板</text>
+    </navigator> -->
+    <view class="two-section" bindtap='albumSign'>
+      <view class="two-circle three">
+        <image src="../../image/tupianqianshu.png"></image>
+      </view>
+      <text>图片签署</text>
+    </view>
+    <view class="two-section" bindtap='cameraSign'>
+      <view class="two-circle four">
+        <image src="../../image/paizhaoqianshu.png"></image>
+      </view>
+      <text>拍照签署</text>
+    </view>
+  </view>
+
+   <!-- 认证判断 -->
+  <view class="unverify" wx:if="{{identity==0||identity==4}}" style='display:block;'>
+    <navigator url="/verify/pages/person/info?title=navigate" style='float:left;' class="verify-bloack">
+      <image  mode="widthFix" src="../../image/home-verify1.png"></image>
+    </navigator>
+    <view  bindtap='opentoast' style='float:right;' class="verify-bloack">
+      <image mode="widthFix" src="../../image/home-verify2.png"></image>
+    </view>
+    <view style='clear:both;'></view>
+  </view>
+
+  <!-- 首页合同列表 -->
+  <view class="recent">
+  </view>
+  <view wx:if="{{contractlist.contract.length > 0}}">
+    <block wx:key="unique" wx:for="{{ contractlist.contract }}" class="recent-content">
+      <navigator url='/pages/contract/detail?contractid={{item.contractid}}&endtime={{item.endtime}}&pdfurl={{item.pdfurl}}&status={{item.status}}'>
+        <view class="recent recent-content">
+          <view class="con-box">
+            <span class="title">{{item.title}}</span>
+            <span class="date">{{filter.dateFormat(item.endtime,'yyyy-MM-dd')}}</span>
+          </view>
+          <view class="signer-content">
+            <view>
+              <span class="icon icon-sender">发</span>
+              <span class="signer">{{item.signatorynames[0]}}</span>
+              <!-- <span class="icon icon-receiver">收</span>
+              <span class="signer">{{item.signatorynames[1]}}</span> -->
+            </view>
+            <view class="status me" wx:if="{{item.status == 0}}">待我签</view>
+            <view class="status other" wx:elif="{{item.status == 1}}">待他签</view>
+            <view class="status success" wx:elif="{{item.status == 2}}">已完成</view>
+            <view class="status" wx:elif="{{item.status == 3}}">我拒签</view>
+            <view class="status" wx:elif="{{item.status == 4}}">他拒签</view>
+            <view class="status" wx:elif="{{item.status == 6}}">已撤回</view>
+            <view class="status" wx:elif="{{item.status == 7}}">已过期</view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+  <!-- <view wx:else class="recent-null" style='text-align:center;'>
+    <image style='width:75px;height:76px;' src="../../image/contract-none.png"></image>
+  </view> -->
+
+  <view class="bg" wx:if="{{ show }}">
+    <view class="propper">
+      <view class="top">
+        <image src="../../image/packagebuy.png"></image>
+      </view>
+      <view class="bottom">
+        <text class="word-one">您的套餐已用完</text>
+        <text class="word-two">放心理财，账户安全升级</text>
+        <button plain class="shouye" bindtap='go'>确定</button>
+      </view>
+      <view bindtap="close" class="close">+</view>
+    </view>
+  </view>
+</template>
+
+<view class="container">
+  <template wx:if="{{!hasFxqUserInfo && canIUse}}" is="login" data="{{title:username}}"></template>
+  <template wx:else is="home" data="{{bannerSrc,waitmeNO,waitotherNO,completeNO,contractlist,identity,show}}"></template>
+</view>

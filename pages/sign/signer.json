@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "签约信息",
+  "usingComponents": {
+    "van-icon": "/zanui/icon/index"
+  }
+}

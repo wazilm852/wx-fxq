@@ -1,0 +1,63 @@
+<!-- 关于我页面 -->
+<!--pages/my/my.wxml-->
+<wxs src="../../common/filter/filter.wxs" module="tools" />
+
+<template name="my">
+
+</template>
+
+<view class="container">
+  <view class="main">
+    <view class="xuanxiang">
+      <!-- <view class="schedule">
+        <view class="lishi">
+          <text class="hirs1">头像</text>
+          <image src="{{headportrait}}" class="head"></image>
+        </view>
+      </view> -->
+      <view class="schedule">
+        <view class="lishi">
+          <text class="hirs1">姓名</text>
+          <text id="username">{{username}}</text>
+        </view>
+      </view>
+      <view wx:if="{{identityCode}}" class="schedule">
+        <view class="lishi">
+          <text class="hirs1">证件</text>
+          <text id="identityCode">{{tools.getIdentity(identityCode)}}</text>
+        </view>
+      </view>
+      <view class="schedule">
+        <view class="lishi">
+          <text class="hirs1">账号</text>
+          <text id="account_number">{{tools.getPhones(phone) || email}}</text>
+        </view>
+      </view>
+      <view wx:if="{{company}}" class="schedule">
+        <view class="lishi">
+          <text class="hirs1">企业</text>
+          <text id="identityCode">{{company}}</text>
+        </view>
+      </view>
+      <!-- <view class="schedule">
+        <navigator url='upemail'>
+          <view class="lishi">
+            <text class="hirs1">邮箱</text>
+            <text id="email">{{email?email:''}}</text>
+          </view>
+        </navigator>
+      </view> -->
+    </view>
+    <!-- <navigator type='button' class='out'>退出登录</navigator> -->
+  </view>
+
+  <van-popup :overlay="false" show="{{ show }}" bind:close="onClose">
+    <view class="pop-up">
+      <view><image src="../../../image/qyb.png"></image></view>
+      <view class="pop_up1">升级为企业用户</view>
+      <view class="pop_up2">个人用户可以在</view>
+      <view class="pop_up3">放心签官网完成账号升级</view>
+      <view><button bindtap="onClose" class='back'>好的</button></view>
+    </view>
+  </van-popup>
+</view>

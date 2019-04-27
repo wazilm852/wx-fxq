@@ -1,0 +1,91 @@
+/* pages/center/template/template.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+.search-input {
+  background: #fff;
+  height: 30pt;
+  width: 90%;
+  margin: 15pt auto 0;
+  padding: 0 2%;
+  border: 1px solid #ccc;
+}
+
+.template-content {
+  padding: 10px;
+  text-align: center;
+}
+
+.contracts {
+  height: 174px;
+  width: 31%;
+  margin: 1%;
+  float: left;
+  background: #fff;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.add {
+  line-height: 184px;
+}
+
+.add text {
+  font-size: 30px;
+  font-weight: 500;
+  color: #999;
+}
+
+.temp-contents {
+  height: 174px;
+  width: 100%;
+  /* float: left; */
+  position: absolute;
+  left: 0;
+  z-index: 9;
+  text-align: center;
+  overflow: hidden;
+}
+
+.title {
+  display: inline-block;
+  margin: 10pt auto 0;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #999;
+  text-overflow: ellipsis;
+}
+
+.doc-type {
+  position: absolute;
+  right: -25px;
+  top: 0px;
+  height: 20px;
+  width: 70px;
+  font-size: 12px;
+  text-align: center;
+  background: #fd9827;
+  color: #fff;
+  transform: rotate(45deg);
+}
+
+.temp-contents image {
+  width: 80%;
+  height: 60%;
+  margin-top: 8pt;
+}
+.default{
+  width: 80%;
+  height: 60%;
+  margin:0 auto 0;
+}
+.lines {
+  height: 7px;
+  width: 100%;
+  display: inline-block;
+  background: #eaeaea;
+  border-radius: 3px;
+}

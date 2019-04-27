@@ -1,0 +1,50 @@
+<!--pages/sign/addsigner.wxml-->
+<wxs src="../common/filter/filter.wxs" module='filter'></wxs>
+<view id="signer">
+  <view class="contract-img" bindtap='openpdf'>
+    <image wx:if="{{filter.ossUrl(firstImgs.imgUrl.path)}}" src="{{filter.ossUrl(firstImgs.imgUrl.path)}}"></image>
+    <image wx:else src='../../image/contract-default.svg'></image>
+  </view>
+  <view id="contract-info">
+    <view class="contract-info">
+      <text class="left">合同名称</text>
+      <input class="hehe" placeholder='请填写合同名称' value="{{title}}" bindchange="bindTitleChange"></input>
+    </view>
+    <view class="contract-info">
+      <text class="left">截止日期</text>
+      <picker style="width:50%;float:right" mode="date" value="{{deadline}}" start="{{today}}"
+    end="{{enddate}}" bindchange="bindDateChange">
+        <view class="picker">
+          {{deadline || '默认签署截止日期是7天'}}
+        </view>
+      </picker>
+    </view>
+    <view style='clear:both;'></view>
+  </view>
+  <view id="signer-area">
+    <text class="title">发起方</text>
+    <view class="signer-info">
+      <view class="name">{{signUser[0].name}}</view>
+      <view class="account">{{signUser[0].phone || signUser[0].email}}</view>
+    </view>
+    <text class="title">接收方</text>
+    <block wx:key="unique" wx:for="{{signUser}}">
+      <block wx:if="{{index > 0}}">
+        <view class="signer-info">
+          <view class="name">{{item.name}}</view>
+          <view class="account">{{item.phone || item.email}}</view>
+          <icon class="delete" type="clear" size="20" color="#ccc" bindtap='delsignUser' data-index='{{index}}' />
+        </view>
+      </block>
+    </block>
+    <navigator url="/pages/sign/addsigner?userContractId={{userContractId}}" class="btn-add">
+      <van-icon style='float:left' color="#fd9827" name="add" size="20px" />
+      <text class="btn-word">添加签署人</text>
+      <view style='clear:both;'></view>
+    </navigator>
+  </view>
+</view>
+
+<view style='text-align:center;'>
+  <button bindtap='saveSignUser' plain class="submit">下一步</button>
+</view>

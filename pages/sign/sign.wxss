@@ -1,0 +1,167 @@
+/* pages/sign/sign.wxss */
+
+.contract-img{
+  width:100%;
+  position: absolute;
+  top:0;
+  bottom: 55px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.img{
+  text-align: center;
+  overflow-x: scroll;
+  border-bottom: 1px solid #ccc;
+}
+.list{
+  position: relative;
+  margin:0 auto;
+}
+.contract-img image{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+.contract-img image{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+.page-number{
+  /* width:32pt; */
+  height:14pt;
+  line-height: 14pt;
+  border-radius:2px;
+  position: absolute;
+  top:10pt;
+  right:10pt;
+  z-index: 10;
+  color:#fff;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2)
+}
+
+.bottom{
+  width: 100%;
+  height:40pt;
+  background: #fff;
+  border:1px solid #eaeaea;
+  position: absolute;
+  bottom: 0;
+  z-index:10;
+  display: flex;
+}
+.sign-mul{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+.sign-area{
+  display: flex;
+  height: 100%;
+  width: 50%;
+  color: #666;
+  font-size: 10pt;
+  text-align: center;
+  flex-direction: column;
+}
+
+.sign-area image{
+  margin:5pt auto;
+}
+
+.sign-list{
+  position: absolute;
+  bottom:40pt;
+  height:44pt;
+  left: 0;
+  right: 0;
+  /* width:100%; */
+  border-top: 1px solid #eaeaea;
+  /* overflow-x: scroll;  */
+  overflow-x: hidden;
+  background: #fff;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding:15pt;
+}
+.close-btn{
+  position: absolute;
+  right:10px;
+  top: 10px;
+  /* bottom: 90pt; */
+  z-index: 1000000;
+}
+
+.sig image{
+  width:100%;
+  height:100%;
+}
+.next-step{
+  background: #fd9827 !important;
+  color: #fff !important;
+  height:40pt;
+  line-height: 40pt;
+  margin:0;
+  width:50%;
+  float: right;
+  border-radius: 0;
+  border: none !important;
+}
+.movable-area{
+  width:100%;
+  height:100%
+}
+.movable-view{
+  width: 80px;
+  height: 40px;
+  /* position: relative; */
+  border:1px dashed #fff
+}
+.delete-btn{
+  right: -10px;
+  top: -10px;
+  position: absolute;
+}
+.iconbtn{
+  position: absolute;
+  width:100%;
+  height: 20px;
+  color: #fff;
+  top: 61px;
+  left: 0;
+  font-size: 12px;
+  z-index: 1000;
+  border-radius:0 0 5px 5px;
+}
+.success{
+  background: #fd9827;
+}
+.delete{
+  background: #ccc;
+}
+.cancel-btn{
+  color: #fd9827;
+  text-align: right;
+  padding: 10px 20px 5px;
+  border-bottom:1px solid #f4f4f4; 
+}
+.signlist{
+  padding: 20px;
+  max-height:215px;
+  overflow-y: scroll; 
+}
+.sig{
+  height: 50pt;
+  width:30%;
+  margin:0 1.3% 10px;
+  display: inline-block;
+  border: 1px solid #f4f4f4; 
+  /* margin: 10px; */
+}

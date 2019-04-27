@@ -1,0 +1,36 @@
+<!--pages/center/template/template.wxml-->
+<van-tabs  color="#fd9827" active="{{active}}" bind:change="changeswiper" bind:change="onChange" animated swipeable>
+<van-tab title="系统模板">
+    <view class="template-content">
+      <!-- <view class="contracts add">
+      <text>+</text>
+    </view> -->
+      <view class="contracts" bindtap='usesysTemp' data-id="{{item.id}}" data-title="{{item.name}}" data-url="{{item.url}}" wx:key="unique" wx:for="{{systempList}}">
+        <view class="temp-contents">
+          <!-- <text class="doc-type">{{item.type}}</text> -->
+          <text class="title">{{item.name}}</text>
+          <view class="default">
+            <text wx:key="unique" wx:for="{{[1, 2, 3, 4]}}" class="lines"></text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="我的模板"> 
+    <view class="template-content">
+      <!-- <view class="contracts add">
+      <text>+</text>
+    </view> -->
+      <view class="contracts" bindtap='useTemp' data-id="{{item.id}}" data-title="{{item.title}}" wx:key="unique" wx:for="{{mytempList}}">
+        <view class="temp-contents">
+          <text class="doc-type">{{item.type}}</text>
+          <text class="title">{{item.title}}</text>
+          <view class="default">
+            <text wx:key="unique" wx:for="{{[1, 2, 3, 4]}}" class="lines"></text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+</van-tabs>
+

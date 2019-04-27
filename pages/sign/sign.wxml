@@ -1,0 +1,62 @@
+<!-- 签署页面  -->
+<!--pages/sign/sign.wxml-->
+<wxs src="../common/filter/filter.wxs" module='filter'></wxs>
+
+<scroll-view bindscroll="scroll" scroll-y class="contract-img">
+  <view class="img" wx:key="unique" wx:for="{{imgs}}">
+    <view class="list" data-imgid="{{item.id}}" style="width:{{documentWidth}}px;height:{{documentHeight}}px">
+      <image src="{{filter.ossUrl(item.path)}}"></image>
+      <movable-area class="movable-area">
+        <movable-view bindchange="getposition" bindscale="getscale" class="movable-view" wx:key="unique" wx:for="{{item.signs}}" wx:for-item="sign" wx:for-index="idx" data-id="{{sign.id}}" data-imgid="{{sign.imgid}}" data-index="{{idx}}" x="{{sign.x}}" y="{{sign.y}}"
+          disabled="{{sign.disabled}}" direction="all" style='width:{{rectangleW}}px;height:{{rectangleH}}px;border:1px dashed #fd9827'>
+          <image mode='aspectFit' src="{{sign.url}}"></image>
+          <icon class="delete-btn" wx:if="{{sign.showdel}}" data-id="{{sign.id}}" data-index="{{idx}}" bindtap='deleteSign' type="clear" size="20" color="red" />
+          <view class="success iconbtn" bindtap='confirmSign' wx:if="{{sign.confirmsign}}" data-id="{{sign.id}}" data-index="{{idx}}">确认</view>
+          <!-- <view class="delete iconbtn" bindtap='deleteSign' wx:if="{{sign.showdel}}" data-id="{{sign.id}}" data-index="{{idx}}">删除</view> -->
+        </movable-view>
+      </movable-area>
+    </view>
+  </view>
+
+</scroll-view>
+<view class="page-number">
+  {{active}}/{{imgs.length}}
+</view>
+
+<form bindsubmit='doneSign' report-submit="true">
+  <!-- <view wx:if="{{visible}}" class="sign-list">
+    <icon class="close-btn" bindtap='closesign' type="clear" size="20" color="#ccc" />
+    <view class="sig" wx:key="unique" wx:for="{{signImgs}}" bindtap='selectSign' data-id="{{item.id}}" data-url="{{(item.url)}}">
+      <image src="{{(item.url)}}"></image>
+    </view>
+    <view style='border:none;' class="sig"></view>
+    <view style='border:none;' class="sig"></view>
+  </view> -->
+  <view class="bottom">
+    <view class="sign-mul">
+      <view bindtap="drawnSignature" class="sign-area" wx:if="{{showdraw}}">
+        <image style='width:23pt;height:17pt;' src="../../image/draw.png"></image>
+        <text>绘制签名</text>
+      </view>
+      <view bindtap='openlist' class="sign-area">
+        <image style='width:23pt;height:17pt;' src="../../image/draw.png"></image>
+        <text>选择签章</text>
+      </view>
+    </view>
+    <button plain class="next-step" formType="submit">完成签署</button>
+  </view>
+  <input name="form_id" value='1545794129028' style='display:none' />
+</form>
+
+<van-popup show="{{ show }}" bind:close="onClose" z-index="1000" position="bottom" bind:close="onClose">
+  <view>
+    <view class="cancel-btn" bindtap='onClose'>取消</view>
+    <!-- <icon bindtap='closesign'type="clear" size="20" color="#ccc" /> -->
+    <view class="signlist">
+      <view class="sig" wx:key="unique" wx:for="{{signImgs}}" bindtap='selectSign' data-id="{{item.id}}" data-url="{{(item.url)}}">
+        <image mode='aspectFit' src="{{(item.url)}}"></image>
+      </view>
+    </view>
+  </view>
+
+</van-popup>

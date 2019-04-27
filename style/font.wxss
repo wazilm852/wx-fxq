@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'kaiti';
+  src: url('https://sign.fangxinqian.cn/token-manager/kaiti.OTF');
+
+}
+
+@font-face {
+  font-family: 'songti';
+  src: url('https://sign.fangxinqian.cn/token-manager/songti.OTF');
+  
+}
+
+@font-face {
+  font-family: 'heiti';
+  src: url('https://sign.fangxinqian.cn/token-manager/fangzhengheiti.ttf');
+  
+}
+
+@font-face {
+  font-family: 'DIN-Bold';
+  src: url('https://sign.fangxinqian.cn/token-manager/DIN-BOLD.OTF');
+  
+}
+
+@font-face {
+  font-family: 'DIN-Medium';
+  src: url('https://sign.fangxinqian.cn/token-manager/DIN-MEDIUM.OTF');
+  
+}
+

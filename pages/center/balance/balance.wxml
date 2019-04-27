@@ -1,0 +1,43 @@
+<!--pages/center/balance/balance.wxml-->
+<view class="top">
+  <view class="balance">
+    <view class="restful">
+      <text class="num">{{balance}}</text>
+      <text class="word">剩余签署合同份数</text>
+    </view>
+    <view class="detail">
+      <image class="bg-2" src="../../../image/bg-2.png"></image>
+      <!-- <navigator class="section" url="/pages/center/order/order"> -->
+      <view class="section">
+        <view class="num">{{buycount}}</view>
+        <view class="word">已购份数</view>
+      </view>
+      <!-- </navigator> -->
+      <view class="section">
+        <view class="num">{{used}}</view>
+        <view class="word">已使用</view>
+      </view>
+      <view class="seg"></view>
+    </view>
+  </view>
+  <view class="seg1"></view>
+  <view class="tips">
+    <text style='color:red;'>温馨提示：</text>小程序端暂未开通购买套餐功能，如需请您在官网联系销售人员。
+  </view>
+  <view class="taocan-area">
+  
+    <block wx:key="unique" wx:for="{{orderlist}}" data-item="item">
+      <view class="area">
+        <view class="taocan">
+          <text class='price'><text class="do">￥</text>{{item.price}}<text class="han">元</text></text>
+          <text class="number">{{item.number}}<text class="han">份</text></text>
+        </view>
+      </view>
+    </block>
+  </view>
+  
+</view>
+<!-- 
+<view class="bottom">
+  <button plain class="submit">确定</button>
+</view> -->

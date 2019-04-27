@@ -1,0 +1,69 @@
+/* pages/sign/addsigner.wxss */
+
+page {
+  background: #fafafa;
+}
+.tips{
+  height:40px;
+  color: #fd9827;
+  line-height: 40px;
+  text-align: right;
+  padding-right: 20px;
+}
+.input-area {
+  width:100%;
+  /* position: absolute;
+  top:15pt; */
+}
+
+.info-area{
+   background: #fff;
+   margin-bottom: 30px;
+}
+
+.input {
+  padding: 0 12pt;
+  border-bottom: 1px solid #eaeaea;
+  margin: 0 auto;
+  position: relative;
+}
+
+.icon{
+  width: 30px;
+  height: 30px;
+}
+/* .left {
+  width:15%;
+  float: left;
+  line-height: 36pt;
+  height:36pt;
+} */
+
+input {
+  width:96%;
+  padding: 0 1%;
+  margin:0 auto;
+  height: 36pt;
+}
+/* .phone{
+  width:80%;
+} */
+
+.submit{
+  width:90%;
+  height:40px;
+  line-height: 40px;
+  border-radius: 0;
+  box-sizing:none;
+  color:#fff !important;
+  background: #fd9827 !important;
+  border:1px solid #fd9827 !important;
+  margin:30px margin;
+}
+navigator:hover{
+  background: transparent;
+}
+
+text:hover{
+  background: transparent;
+}

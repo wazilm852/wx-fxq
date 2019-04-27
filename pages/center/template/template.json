@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "合同模板",
+  "usingComponents": {
+    "van-tab": "/zanui/tab/index",
+    "van-tabs": "/zanui/tabs/index"
+  }
+}

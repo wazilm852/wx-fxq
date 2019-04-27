@@ -1,0 +1,94 @@
+<!--pages/center/signature/add.wxml-->
+<template name="person">
+  <view id="signature-add">
+    <input placeholder='请输入签章名称（2-4个字）' value='' name='title' bindinput="getTitle" bindblur='newSign' maxlength='4'></input>
+    <view class="img-area">
+      <view class="show-area">
+        <image class="show-img" src="{{src || '/image/sign1.png'}}"></image>
+        <!-- <view class="show-img">
+          <view wx:if="{{shape == 1}}" class="sign-sqaure" 
+          style="border-color:{{color==1?'red':(color==2?'black':'blue')}};color:{{color==1?'red':(color==2?'black':'blue')}};font-family:{{font==1?'heiti':(font==2?'songti':'kaiti')}};">
+            {{name}}
+          </view>
+          <view wx:if="{{shape == 2}}" class="sign-rect" 
+          style="border-color:{{color==1?'red':(color==2?'black':'blue')}};color:{{color==1?'red':(color==2?'black':'blue')}};font-family:{{font==1?'heiti':(font==2?'songti':'kaiti')}};">
+            {{name}}
+          </view>
+        </view> -->
+      </view>
+      <view class="color-area">
+        <text bindtap='getColor' data-value='1' class="answer-item-wrapper radio1 {{color==1?'active':''}}">
+          <text class="select-wrapper"></text>
+        <text class="select-content"></text>
+        </text>
+        <text bindtap='getColor' data-value='2' class="answer-item-wrapper radio2 {{color==2?'active':''}}">
+          <text class="select-wrapper"></text>
+        <text class="select-content"></text>
+        </text>
+        <text bindtap='getColor' data-value='3' class="answer-item-wrapper radio3 {{color==3?'active':''}}">
+          <text class="select-wrapper"></text>
+        <text class="select-content"></text>
+        </text>
+      </view>
+    </view>
+    <view class="sign-style">
+      <text class="style-title">签章样式</text>
+      <view class="style-img">
+        <image src="/image/sign1.png" bindtap='getStyle' data-font="1" data-broder="1"></image>
+        <image src="/image/psign1.png" bindtap='getStyle' data-font="2" data-broder="2"></image>
+        <image src="/image/psign2.png" bindtap='getStyle' data-font="3" data-broder="2"></image>
+        
+        <!-- <view data-font="1" data-broder="1" bindtap="getStyle" class="font heiti">
+          <view>方正</view>
+          <view>黑体</view>
+        </view>
+        <view class="xiao">
+          <view data-font="2" data-broder="2" bindtap="getStyle" class="font song">
+            <view>仿宋</view>
+          </view>
+          <view data-font="3" data-broder="2" bindtap="getStyle"  class="font kai">
+            <view>楷体</view>
+          </view>
+        </view>
+        <view style='clear:both;'></view> -->
+      </view>
+    </view>
+  </view>
+</template>
+
+<template name="company">
+  <view id="signature-add">
+    <input placeholder='请输入签章名称（2-15个字）' value='' name='title' bindinput='getTitle' bindblur='newSign' maxlength='15'></input>
+    <input placeholder='请输入横向文（少于8个字）' value='' name='transverse' bindinput='getTransverse' bindblur='newSign' maxlength='8'></input>
+    <input placeholder='请输入下旋文（少于8个字）' value='' name='seaNo' bindinput='getSeaNo' bindblur='newSign' type='number' maxlength='8'></input>
+    <view class="img-area">
+      <view class="show-area">
+        <image class="show-img" src="{{src || '../../../image/sign2.png'}}"></image>
+      </view>
+      <view class="color-area">
+        <text class="answer-item-wrapper radio1 {{color==0?'active':''}}" bindtap='getColor' data-value='0'>
+          <text class="select-wrapper"></text>
+        <text class="select-content"></text>
+        </text>
+        <text class="answer-item-wrapper radio2 {{color==2?'active':''}}" bindtap='getColor' data-value='2'>
+          <text class="select-wrapper"></text>
+        <text class="select-content"></text>
+        </text>
+        <text class="answer-item-wrapper radio3 {{color==1?'active':''}}" bindtap='getColor' data-value='1'>
+          <text class="select-wrapper"></text>
+        <text class="select-content"></text>
+        </text>
+      </view>
+    </view>
+    <view class="sign-style">
+      <text class="style-title">签章样式</text>
+      <view class="style-img">
+        <image src="../../../image/csign1.jpg" bindtap='getStyle' data-value='1'></image>
+        <image src="../../../image/csign2.jpg" bindtap='getStyle' data-value='0'></image>
+      </view>
+    </view>
+  </view>
+</template>
+
+<template is="{{accountType}}" data="{{title,shape,name,color,font,src}}"></template>
+<button plain class="submit" bindtap='confirm'>确定</button>

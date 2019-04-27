@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "个人认证",
+  "usingComponents": {
+    "van-field": "/zanui/field/index",
+    "van-button": "/zanui/button/index"
+  }
+}

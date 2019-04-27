@@ -1,0 +1,19 @@
+<!--添加联系人-->
+
+<template name="add_contact">
+</template>
+
+<view class="add-signer">
+  <view class="main">
+  <view class="input">
+      <input style='border-bottom:1px solid #F2F2F2' bindblur='getAlias' value="{{ identity }}" focus label="备注" placeholder="请输入姓名/昵称"></input>
+    </view>
+    <view class="input">
+      <input bindblur='getAccount' value="{{ identity }}" label="账号" placeholder="请输入手机号"></input>
+    </view>
+    
+  </view>
+  <view style='text-align:center;'>
+    <button bindtap='addContacter' plain class="submit">确定</button>
+  </view>
+</view>

@@ -1,0 +1,61 @@
+/* pages/login/login.wxss */
+
+ .touxiang{
+  padding: 8% 0;
+  text-align: center;
+}
+.touxiang_1{
+  width:123px;
+  height:43px;
+  margin-bottom: 3% auto; 
+} 
+.tips{
+  color:#666;
+  width: 85%;
+  padding:0 20px 20px;
+  font-size:13px;
+  margin: 30px auto;
+}
+/* 
+.red{
+  color:#ed4014;
+} */
+
+.forget{
+  font-size:14px;
+  color:#fd9827;
+  float: right;
+  padding-right:24px;
+}
+.input{
+  width:85%;
+  border-bottom:1px solid #eaeaea;
+  margin:0 auto 10px;
+}
+input{
+  height:30pt;
+}
+.login-btn{
+   width:80%;
+  height:40px;
+  line-height: 40px;
+  border-radius: 20px;
+  box-sizing:none;
+  color:#fff !important;
+  background: #fd9827 !important;
+  border:1px solid #fd9827 !important;
+  margin:1.5rem auto 0;
+}
+
+.biaoyu{
+  text-align: center;
+  margin-top:10px;
+}
+.biaoyu1{
+  color:#fd9827;
+  font-size:20px;
+}
+.biaoyu2{
+  color:#ccc;
+  font-size: 14px;
+}

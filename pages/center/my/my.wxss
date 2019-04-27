@@ -1,0 +1,146 @@
+.main {
+  /* margin-top: 55px; */
+  width: 100%;
+  float: left;
+  margin-bottom: 25%;
+}
+
+.lishi {
+  width: 95%;
+  height: 44px;
+  margin: auto;
+  /* display: flex;
+    justify-content: space-between; */
+  padding-right: 2%;
+}
+
+.mui-icon-forward {
+  line-height: 44px;
+  margin-bottom: 0;
+  float: right;
+}
+
+.hirs {
+  border: 0px solid #ddd !important;
+  line-height: 44px;
+  margin-bottom: 0;
+  float: left;
+  padding-left: 2%;
+  color: #8f8f94;
+}
+
+.hirs1 {
+  border: 0px solid #ddd !important;
+  line-height: 44px;
+  margin-bottom: 0;
+  float: left;
+  padding-left: 2%;
+  width: 50px;
+  color: #8f8f94;
+}
+
+.head {
+  width: 40px;
+  height: 40px;
+  margin-top: 2px;
+  float: right;
+}
+
+.notauth {
+  line-height: 44px;
+}
+
+.hirsnot {
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #8f8f94;
+}
+
+#username, #account_number, #identityCode, #email {
+  display: inline;
+  float: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+  /* padding-left: 18px; */
+  color: #a4a4a4;
+  font-size: 14px;
+  width: 230px;
+  line-height: 44px;
+}
+
+.schedule {
+  width: 100%;
+  float: left;
+  background-color: #fff;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.out {
+  width: 90%;
+  margin: 20px auto 0;
+  background-color: #fd9827;
+  text-align: center;
+  border-bottom: 1px solid #f5f5f5;
+  color: #fff;
+  height: 40px;
+  line-height: 40px;
+}
+
+/* .mui-tab-item img {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+.mui-bar-tab .mui-tab-item.mui-active {
+    color: #FD9827;
+} */
+
+.xuanxiang {
+  width: 100%;
+  background-color: #fff;
+  height: 150px;
+}
+
+.pop-up {
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.pop-up image {
+  width: 80px;
+  height: 65px;
+  margin: 25px auto 0;
+}
+
+.pop_up1 {
+  font-size: 15px;
+  color: #2a2a2a;
+}
+
+.pop_up2 {
+  font-size: 12px;
+  color: #8f8f8f;
+  margin-top: 10px;
+}
+
+.pop_up3 {
+  font-size: 12px;
+  color: #8f8f8f;
+}
+
+.back {
+  width: 50%;
+  background: #fff;
+  border: 1px solid #fd9827;
+  margin: 25px auto;
+  color: #fd9827;
+  height: 37px;
+  font-size: 13px;
+  line-height: 37px;
+}

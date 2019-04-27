@@ -1,0 +1,141 @@
+/* .list{
+    position: absolute;
+    height: 100%;
+    bottom:0;
+  } */
+
+.contract {
+  height: 50px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.con {
+  height: 100%;
+}
+
+.title {
+  color: #333;
+  width: 150px;
+  white-space: nowrap;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+}
+
+.signer {
+  color: #666;
+  font-size: 14px;
+  width: 200px;
+  padding-top: 5px;
+}
+
+.sender, .receiver {
+  float: left;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  line-height: 16px;
+  font-size: 12px;
+  border: 1px solid rgba(204, 204, 204, 1);
+  border-radius: 4px;
+}
+
+.sender {
+  color: #008b36;
+  margin-right: 5px;
+}
+
+.receiver {
+  color: #ffbc09;
+  margin: 0 5px;
+}
+
+.conname {
+  float: left;
+  text-align: center;
+  font-size: 12px;
+  width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.con-status {
+  height: 100%;
+  float: right;
+  display: flex;
+  /* text-align: right; */
+  flex-direction: column;
+}
+
+.time {
+  font-size: 13px;
+  color: #999;
+}
+
+.status-content {
+  padding: 10px;
+  text-align: right;
+}
+
+.status {
+  display: inline-block;
+  width: 42px;
+  height: 20px;
+  font-size: 13px;
+  color: #24944b;
+  /* border:1px solid #24944B; */
+  border-radius: 4px;
+  text-align: center;
+}
+
+.status1 {
+  color: #24944b;
+}
+
+.status2 {
+  color: #ea3253;
+}
+
+.status3 {
+  color: #999;
+}
+
+.van-tabs {
+  min-height: 100%;
+}
+
+.van-tabs__content {
+  width: 100%;
+  position: absolute;
+  min-height: 100%;
+  overflow-y: scroll;
+  /* bottom:0px; */
+  top: 44px;
+}
+
+.van-tab {
+  padding: 10px !important;
+  line-height: normal !important;
+}
+
+.van-tab__title {
+  height: 20px;
+  line-height: 20px;
+}
+
+.van-tab--active .van-tab__title {
+  background: #fd9827;
+  text-align: center;
+  border-radius: 13px;
+  color: #fff;
+  /* height: 100%; */
+}
+
+.van-tabs__line {
+  display: none;
+}

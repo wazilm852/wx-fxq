@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "身份认证",
+  "usingComponents": {
+    "van-toast": "/zanui/toast/index"
+  }
+}

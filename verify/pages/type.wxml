@@ -1,0 +1,14 @@
+<!-- 选择认证方式 -->
+<!--pages/verify/type.wxml-->
+
+<view class="main">
+  <view class="personal personal2">
+    <navigator url="/verify/pages/person/info?title=navigate">
+      <image src="/image/personverify.png"></image>
+    </navigator>
+
+  </view>
+  <view class="personal personal1">
+    <image bindtap='opentoast' src="/image/companyverify.png"></image>
+  </view>
+</view>

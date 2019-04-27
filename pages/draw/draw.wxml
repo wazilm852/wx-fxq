@@ -1,0 +1,10 @@
+<!--pages/draw/draw.wxml-->
+<view class="draw">
+  <canvas disable-scroll bindtouchstart="drawstart" bindtouchmove='drawmove' bindtouchend='drawend' 
+  class="canvas" canvas-id="my-canvas"></canvas>
+  <text class="tip">请横屏绘制您的签名哦😘</text>
+  <cover-view bindtap='clear' class="btn clean">
+  清除</cover-view>
+  <cover-view bindtap='getdrawpic' class="btn sure">
+  确认</cover-view>
+</view>

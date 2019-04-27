@@ -1,0 +1,140 @@
+/* pages/sign/addsigner.wxss */
+
+page {
+  background: #fafafa;
+}
+#signer{
+  position: absolute;
+  top:0;
+  bottom: 40px;
+  overflow-y: scroll;
+}
+.contract-img {
+  margin-top: 15pt;
+  background: #fff;
+  overflow-x: scroll;
+  padding: 10px 0;
+  padding-left: 10px;
+  height: 80pt;
+}
+
+.contract-img image {
+  width: 40pt;
+  padding: 5pt;
+  height: 65pt;
+  border: 1px solid #eaeaea;
+}
+.default{
+  width: 40pt;
+  height: 100%;
+  margin:0 auto 0;
+  border: 1px solid #eaeaea;
+}
+.lines {
+  height: 5px;
+  width: 100%;
+  display: inline-block;
+  background: #eaeaea;
+  border-radius: 3px;
+}
+#contract-info {
+  margin-top: 15pt;
+}
+
+.contract-info {
+  width: 96%;
+  padding: 0 2%;
+  height: 44px;
+  float: left;
+  background-color: #fff;
+  border-bottom: 1px solid #f5f5f5;
+}
+.hehe{
+  float: right;
+  text-align: right;
+  width:70%;
+  height:45px;
+  line-height: 45px;
+}
+.picker{
+  height:45px;
+  line-height: 45px;
+  text-align: right;
+  color: #999;
+}
+.left {
+  line-height: 44px;
+  float: left;
+  color: #333;
+  padding: 0 2%;
+}
+
+.right {
+  float: right;
+  text-align: right;
+  color: #999;
+  line-height: 44px;
+  padding: 0 2%;
+}
+
+#signer-area {
+  background: #fff;
+  margin-top: 15pt;
+  padding: 15px;
+}
+
+#signer-area .title {
+  color: #333;
+}
+
+.signer-info {
+  background: #f4f4f4;
+  margin: 16px 0;
+  padding: 6pt 14pt;
+  position: relative;
+}
+.delete{
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+.name {
+  color: #333;
+  font-size: 15px;
+}
+
+.account {
+  color: #999;
+  font-size: 12px;
+}
+
+.btn-add {
+  margin-top: 20px;
+  height: 20px;
+  line-height: 20px;
+}
+
+.btn-word {
+  float: left;
+  margin-left: 10px;
+  font-size: 13px;
+  color: #fd9827;
+}
+
+.submit {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 0;
+  box-sizing: none;
+  color: #fff !important;
+  background: #fd9827 !important;
+  border: 1px solid #fd9827 !important;
+  margin: 0;
+}
+
+navigator:hover{
+  background: #fff;
+}

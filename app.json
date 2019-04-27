@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/sign/sign",
+    "pages/sign/addlink",
+    "pages/sign/addsigner",
+    "pages/sign/signer",
+    "pages/draw/draw",
+    "pages/contract/detail",
+    "pages/contract/contract",
+    "pages/center/signature/signature",
+    "pages/center/center",
+    "pages/center/balance/balance",
+    "pages/center/template/template",
+    "pages/center/contact/contact",
+    "pages/center/my/my",
+    "pages/center/contact/add",
+    "pages/center/contact/update",
+    "pages/center/signature/add",
+    "pages/center/template/edit"
+  ],
+  "subpackages": [
+    {
+      "root": "login",
+      "pages": [
+        "pages/bind/bind",
+        "pages/bind/bindone",
+        "pages/register/register"
+      ]
+    },
+    {
+      "root": "verify",
+      "pages": [
+        "pages/type",
+        "pages/person/info",
+        "pages/person/face"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#FD9827",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/shouye_1.png",
+        "selectedIconPath": "image/shouye.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/contract/contract",
+        "iconPath": "image/hetongguanli_1.png",
+        "selectedIconPath": "image/hetongguanli.png",
+        "text": "合同管理"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "iconPath": "image/wode_1.png",
+        "selectedIconPath": "image/wode.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "enablePullDownRefresh": true,
+  "debug": true
+}

@@ -1,0 +1,34 @@
+/* pages/bind/bindone.wxss */
+
+.avatar{
+  width:108px;
+  height:128px;
+  margin:0 auto 50px;
+}
+
+.avatar-img{
+  width:108px;
+  height:108px;
+  margin-top:20px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.btn{
+  width: 80%;
+  height: 40px;
+  color: #999;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  line-height: 40px;
+  text-align: center;
+  margin: 20px auto 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.orange{
+  background: #fd9827;
+  color:#fff;
+  border-color:#fd9827;
+}

@@ -1,0 +1,22 @@
+<!--pages/sign/addsigner.wxml-->
+
+<view class="tips">
+  <navigator url="/pages/sign/addlink">
+    <text>从通讯录添加</text>
+  </navigator>
+</view>
+<view class="input-area">
+  <view class="info-area">
+    <view style='border:0;' class="input">
+      <!-- <text class="left">姓名</text> -->
+      <input  style='border-bottom:1px solid #F2F2F2' bindinput='bindblurName' value="{{ name }}" focus placeholder="请输入姓名/昵称"></input>
+    </view>
+    <view class="input">
+      <!-- <text class="left">账号</text> -->
+      <input bindinput='bindblurPhone' class="phone" value='{{phone}}' placeholder="请输入手机号"></input>
+    </view>
+  </view>
+  <view style='text-align:center;'>
+    <button bindtap='addSigner' plain class="submit">确定</button>
+  </view>
+</view>

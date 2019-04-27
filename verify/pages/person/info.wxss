@@ -1,0 +1,60 @@
+/* pages/verify/person/info.wxss */
+
+
+.input{
+  width:90%;
+  display: flex;
+  flex-direction: column;
+  margin:5px auto;
+  padding:0 10px;
+  /* border-bottom: 1px solid #eaeaea;  */
+}
+/* .input-code{
+  width:90%;
+  height:40px;
+  margin:5px auto;
+  padding:0 10px;
+  border-bottom: 1px solid #eaeaea; 
+} */
+.title{
+  width:100%;
+  text-align: center;
+  color:#333;
+  font-size:16px;
+  margin: 30px 0 24px;
+  float: left;
+}
+input{
+  width:100%;
+  height:44px;
+  border-radius:22px; 
+  border: 1px solid #eaeaea;
+  text-align: center;
+}
+.codenum{
+  width:60%;
+  float: left;
+}
+.code-btn{
+  width:30%;
+  float: right;
+  height:30px;
+  font-size: 12px;
+  line-height: 30px;
+  border-radius: 0;
+  box-sizing:none;
+  background: #fff;
+  color:#fd9827;
+  margin:3px 5px 0 0;
+}
+.submit{
+  width:80%;
+  height:40px;
+  line-height: 40px;
+  border-radius: 22px;
+  box-sizing:none;
+  color:#fff !important;
+  background: #fd9827 !important;
+  border:1px solid #fd9827 !important;
+  margin:64px auto 20px;
+}

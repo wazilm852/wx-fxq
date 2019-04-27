@@ -1,0 +1,21 @@
+<!--修改联系人-->
+
+<template name="update_contacter">
+
+</template>
+
+<view class="update-signer">
+  <view class="main">
+    
+    <view class="input">
+      <input style='color:#999;'  bindblur='getAccount' value="{{ phone }}" disabled='true'></input>
+    </view>
+    <view class="input">
+      <input focus="true" bindblur='getAlias' value="{{ nickname }}" label="备注" placeholder="请输入昵称"></input>
+    </view>
+  </view>
+  <view class="btn-area">
+    <button bindtap='upContacter' plain class=" btn update">修改</button>
+    <button bindtap='delContacter' type="warn" class='btn delete'>删除</button>
+  </view>
+</view>

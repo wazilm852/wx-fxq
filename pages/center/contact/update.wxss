@@ -1,0 +1,45 @@
+/* pages/center/contact/update.wxss */
+
+.add-signer{
+  height: 98%;
+  padding-top:2%;
+  background: #fafafa;
+}
+
+.main{
+  width: 90%;
+  background: #fff;
+  font-size: 16px;
+  /* padding: 15px; */
+  margin:20px auto;
+}
+
+input{
+  height: 50px;
+  border-bottom:1px solid #F2F2F2;
+}
+
+.btn{
+  width:45%;
+  height:40px;
+  line-height: 40px;
+  border-radius: 2px;
+  box-sizing:none;
+  color:#fff !important;
+  
+  margin:20px auto;
+}
+.btn-area{
+  text-align:center;
+  display: flex;
+  justify-content: space-around;
+}
+.update{
+background: #fd9827 !important;
+  border:1px solid #fd9827 !important;
+}
+
+.delete{
+background: #ccc !important;
+  border:#ccc !important;
+}

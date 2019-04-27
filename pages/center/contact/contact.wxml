@@ -1,0 +1,34 @@
+<!--联系人首页-->
+
+<template name="contact">
+
+</template>
+
+<!-- 引入wxs脚本 -->
+<wxs src="../../common/filter/filter.wxs" module="tools" />
+
+<view class="container">
+  <view class="main">
+    <view class="xuanxiang">
+      <view class="schedule">
+        <view class="lishi">
+            <navigator url="/pages/center/contact/add" class="phone add">添加联系人</navigator>
+        </view>
+        <block wx:key="unique" class="list" wx:for="{{contacter}}" data-item="item">
+          <navigator url="update?id={{item.id}}&nickname={{item.name}}&phone={{item.phone}}&groupId={{item.groupid}}" >
+            <view class="lishi"> 
+            <!-- wu头像用默认头像 -->
+                <!-- <image class="avatar"></image> -->
+                <image class="avatar" src='../../../image/defaultavatar.svg'></image>
+                <text class="hirs1">{{tools.getContacter(item.name)}}</text>
+                <text class="phone">{{item.phone}}</text>
+                <view style='clear:both;'></view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+
+

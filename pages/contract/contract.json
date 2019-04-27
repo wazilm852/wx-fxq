@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "合同管理",
+  "enablePullDownRefresh":true,
+  "usingComponents": {
+    "van-tab": "/zanui/tab/index",
+    "van-tabs": "/zanui/tabs/index"
+  }
+}

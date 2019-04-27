@@ -1,0 +1,33 @@
+<!--pages/verify/person/face.wxml-->
+
+<block wx:if="{{src}}">
+  <image wx:if="{{src}}" mode="widthFix" class="photo" src="{{src}}" style='width:90%'></image>
+  <view class="btn-area">
+    <button plain class='confirm' bindtap='identifyFace'>确定</button>
+    <button plain class='cancel' bindtap='cancel'>取消</button>
+  </view>
+</block>
+<block wx:else>
+  <camera device-position="{{position}}" binderror="error">
+    <cover-view class="image-cnt">
+      <cover-image class="cover-image" src="/image/face.png" style='width:100%;height:100%;' />
+    </cover-view>
+  </camera>
+  <button plain class="submit" bindtap='takePhoto'>拍摄</button>
+</block>
+
+<view class="bg" wx:if="{{ show }}">
+  <view class="propper">
+    <view class="top">
+      <image src="/image/success-icon1.png" mode="widthFix" style='width:80%'></image>
+    </view>
+    <view class="bottom">
+      <text class="word-one">认证成功</text>
+      <!-- <text class="word-two">{{time}}s后自动返回首页</text> -->
+      <button class="shouye" bindtap='go'>返回首页</button>
+    </view>
+    <!-- <view style='text-align:center;margin-top:10px;'> 
+      <icon bindtap="close" type="cancel" size="30" color="#fafafa" />
+    </view> -->
+  </view>
+</view>

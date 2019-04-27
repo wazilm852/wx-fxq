@@ -1,0 +1,2 @@
+<!--pages/center/template/edit.wxml-->
+<web-view src="https://weixin.fangxinqian.cn/htmledit/layedit.html?id={{id}}&title={{title}}&userid={{fxq_userInfo.userid}}&companyid={{companyid}}&token={{fxq_userInfo.token}}"></web-view>

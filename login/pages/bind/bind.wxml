@@ -1,0 +1,28 @@
+<!-- 绑定放心签账号页面 -->
+<!--pages/bind/bind.wxml-->
+
+<view class="content">
+  <view class="touxiang">
+    <image class="touxiang_1" src="/image/logo.png"></image>
+  </view>
+  
+  <view class="input">
+    <input bindblur='bindblurPhone' value="{{ username }}" focus placeholder="请输入手机号/邮箱"></input>
+  </view>
+  <view class="input">
+    <input bindinput='bindblurPassword' value="{{ password }}" type="password" placeholder="请输入密码"></input>
+  </view>
+  <view>
+    <button plain bindtap='bindUserInfo' class="login-btn">绑定</button>
+  </view>
+  <view class="tips">
+    <text>
+      <text class="red">温馨提示：</text>请输入您已有的放心签账号、密码。将该账号与微信号关联后可直接使用微信账号登录放心签。
+    </text>
+  </view>
+  <!-- <view class="biaoyu">
+    <image src="/image/biaoyu.jpeg"></image> -->
+    <!-- <view class="biaoyu1">放心签电子合同</view>
+    <view class="biaoyu2">放心签您放心的电子合同专家</view> -->
+  <!-- </view> -->
+</view>

@@ -1,0 +1,100 @@
+/* pages/verify/person/face.wxss */
+
+camera {
+  height: 90%;
+}
+.btn-area{
+  display: flex;
+}
+.photo{
+  display: block;
+  width: 90%;
+  margin:0 auto;
+}
+.confirm, .cancel{
+  width: 40%;
+
+}
+.confirm{
+  background: #fd9827 !important;
+  color: #fff !important;
+  border-color: #fd9827 !important;
+}
+.cancel{
+  background: #ccc !important;
+  color: #fff !important;
+  border-color: #ccc !important;
+}
+.submit{
+  margin:0;
+  border-radius: 0;
+  /* height: 10%; */
+  /* line-height: 10%; */
+  width:100%;
+  border:none !important;
+  background: #fff !important;
+  color: #fd9827 !important;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+}
+
+.propper {
+  background: transparent;
+}
+
+.top {
+  background: #fffbe6;
+  width: 220px;
+  margin: 100px auto 0;
+  height: 125px;
+  padding: 15px;
+  border-radius: 20px 20px 0 0;
+}
+
+.top image {
+  width: 100%;
+  height: 100%;
+}
+
+.bottom {
+  width: 280px;
+  height: 120px;
+  margin: 0 auto;
+  padding-top: 30px;
+  background: #ffb71a;
+  border-radius: 0 0 20px 20px;
+}
+
+.bottom text {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.word-one {
+  font-size: 18px;
+  margin: 0;
+}
+
+.word-two {
+  color: #666;
+  font-size: 13px;
+}
+
+.shouye {
+  width: 150px;
+  height: 32px;
+  color: #fd9827;
+  line-height: 32px;
+  font-size: 16px;
+  background: #fffdeb;
+  border-radius: 29px;
+  margin: 20px auto 0;
+}

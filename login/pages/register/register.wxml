@@ -1,0 +1,29 @@
+<!-- 注册页面 -->
+<!--pages/register/register.wxml-->
+
+<view class="content">
+  <view class="touxiang">
+    <image class="touxiang_1" src="/image/logo.png"></image>
+  </view>
+  <view class="info">
+    <view class="input">
+      <input bindblur="bindblurPhone" focus value="{{ username }}" placeholder="请输入手机号/邮箱"></input>
+    </view>
+    <view class="input">
+      <input type='password' bindblur="bindblurPassword"  value="{{ password }}" placeholder="请输入密码"></input>
+    </view>
+    <view class="input-code">
+      <input class="codenum" bindinput="bindblurCode" value="{{ code }}" placeholder="请输入验证码"></input>
+      <button bindtap='getCode' disabled='{{disabled}}' class="code-btn">{{codename}}</button>
+      <view style='clear:both;'></view>
+    </view>
+  </view>
+  <view style='text-align:center;'>
+    <button plain class="submit" bindtap="bindRegisterUser" type="primary">立即注册</button>
+  </view>
+  <view class="biaoyu">
+    <!-- <image src="../../image/biaoyu.jpeg"></image> -->
+    <view class="biaoyu1">放心签电子合同</view>
+    <view class="biaoyu2">放心签您放心的电子合同专家</view>
+  </view>
+</view>

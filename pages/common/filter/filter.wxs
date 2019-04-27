@@ -1,0 +1,99 @@
+
+var formatNumber = function (n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+var regYear = getRegExp("(y+)", "i");
+
+var dateFormat = function (timestamp, format) {
+  if (!format) {
+    format = "yyyy-MM-dd hh:mm:ss";
+  }
+  timestamp = parseInt(timestamp);
+  var realDate = getDate(timestamp);
+  function timeFormat(num) {
+    return num < 10 ? '0' + num : num;
+  }
+  var date = [
+    ["M+", timeFormat(realDate.getMonth() + 1)],
+    ["d+", timeFormat(realDate.getDate())],
+    ["h+", timeFormat(realDate.getHours())],
+    ["m+", timeFormat(realDate.getMinutes())],
+    ["s+", timeFormat(realDate.getSeconds())],
+    ["q+", Math.floor((realDate.getMonth() + 3) / 3)],
+    ["S+", realDate.getMilliseconds()],
+  ];
+  var reg1 = regYear.exec(format);
+  // console.log(reg1[0]);
+  if (reg1) {
+
+    format = format.replace(reg1[1], (realDate.getFullYear() + '').substring(4 - reg1[1].length));
+  }
+  for (var i = 0; i < date.length; i++) {
+    var k = date[i][0];
+    var v = date[i][1];
+
+    var reg2 = getRegExp("(" + k + ")").exec(format);
+    if (reg2) {
+      format = format.replace(reg2[1], reg2[1].length == 1
+        ? v : ("00" + v).substring(("" + v).length));
+    }
+  }
+  return format;
+}
+
+
+
+function httpsUrl(str){
+  var s = str.replace("http://","https://");
+  return s;
+}
+
+function ossUrl(url) {
+  var reg = getRegExp("^http(s)?:\/\/(.*?)\/")
+  var url = url.replace(reg, 'https://pdf.fangxinqian.cn/')
+  return url;
+}
+
+//截取手机号前三位后面加上8个*
+function getPhone (str) {
+  var newStr = str.substring(0, 3);
+  newStr = newStr + "********";
+  return newStr;
+}
+
+//截取手机号前三位后面加上8个*
+function getPhones (str) {
+  var newStr = str.substring(0, 3);
+  var end = str.substring(8, 11);
+  newStr = newStr + "*****" + end;
+  return newStr;
+}
+
+//联系人截取备注最后加上3个.
+function getContacter (str) {
+  var newStr = str.substring(0, 8);
+  newStr = str.length > 7 ? newStr + "..." : str; 
+  return newStr;
+}
+
+function getIdentity (str)
+{
+  var newStr = str.substring(0, 3);
+  var end = str.substring(15, 18);
+  newStr = newStr + "************" + end;
+  return newStr;
+}
+
+
+module.exports = {
+  dateFormat: dateFormat,
+  httpsUrl: httpsUrl,
+  ossUrl: ossUrl,
+  getPhone: getPhone,
+  getContacter: getContacter,
+  getPhones: getPhones,
+  getIdentity: getIdentity
+}
+

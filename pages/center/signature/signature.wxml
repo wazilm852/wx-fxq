@@ -1,0 +1,35 @@
+<!--pages/center/signature/signature.wxml-->
+<view id="signature">
+  <scroll-view scroll-y="true" bindscroll="scroll" scroll-top="{{scrollTop}}">
+    <block wx:key="unique" wx:for="{{signature}}" data-item="item">
+      <view class="signature" wx:if="{{item.companyid}}">
+        <image mode='widthFix' src="{{item.url}}"></image>
+        <icon class="delete" wx:if="{{!item.isused}}" type="clear" size="20" color="#ccc" bindtap='deleteSignature' id="{{item.id}}" data-name="{{item.isused}}" />
+        <view class="star">
+          <van-icon wx:if="{{item.status==0}}" name="star-o" color="#666" bindtap='setDefault' id="{{item.id}}" />
+          <van-icon wx:else name="star" color="#fd9827" />
+          <text wx:if="{{item.status==0}}" bindtap='setDefault' id="{{item.id}}">设为默认</text>
+          <text wx:else>默认签名</text>
+        </view>
+      </view>
+      <view class="signature" wx:else>
+        <image src="{{item.url}}"></image>
+        <icon class="delete" wx:if="{{!item.isused}}" type="clear" size="20" color="#ccc" bindtap='deleteSignature' id="{{item.id}}" data-name="{{item.isused}}" />
+        <view class="star">
+          <van-icon wx:if="{{item.status==1}}" name="star-o" color="#666" bindtap='setDefault' id="{{item.id}}" />
+          <van-icon wx:else name="star" color="#fd9827" />
+          <text wx:if="{{item.status==1}}" bindtap='setDefault' id="{{item.id}}">设为默认</text>
+          <text wx:else>默认签名</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+
+<button plain class="submit" bindtap='addSign'>添加签章</button>
+<van-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>

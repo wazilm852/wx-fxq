@@ -1,0 +1,59 @@
+<!-- 个人中心首页 -->
+<!--pages/center/center.wxml-->
+
+<template name="center">
+
+</template>
+
+<view class="container">
+  <view class="main">
+    <view class="hehe">
+      <view class="avatar-area">
+        <image class="avatar" src="{{head}}"></image>
+        <navigator wx:if="{{identity==0 || identity==4}}" url="/verify/pages/type" >
+          <text class="user-status fail">未认证</text>
+        </navigator>
+        <text wx:else class="user-status success">已认证</text>
+      </view>
+      <view  class="info-bg">
+      <view class="info" style='background:#fff;'>
+        <view class="nickname">昵称:{{nickname}}</view>
+        <view class="idname">ID:{{phone || email}}</view>
+      </view>
+      </view>
+
+    </view>
+    <view class="xuanxiang">
+      <view class="schedule">
+          <navigator url="/pages/center/balance/balance" class="lishi"> 
+            <image src="../../image/wodezhanghao.svg"></image>
+            <text class="hirs1">账户余额</text>
+          </navigator>
+      </view>
+      <view class="schedule">
+          <navigator url="/pages/center/contact/contact" class="lishi">
+          <image src="../../image/lianxiren.svg"></image>
+            <text class="hirs1">联系人</text>
+          </navigator>
+      </view>
+      <view class="schedule">
+          <navigator url="/pages/center/signature/signature" class="lishi">
+          <image src="../../image/qianzhangguanli.svg"></image>
+            <text class="hirs1">签章管理</text>
+          </navigator>
+      </view>
+      <view class="schedule">
+          <navigator url="/pages/center/template/template?active=1" class="lishi">
+          <image src="../../image/wodemoban.svg"></image>
+            <text class="hirs1">我的模板</text>
+          </navigator>
+      </view>
+      <view class="schedule">
+          <navigator url="/pages/center/my/my" class="lishi">
+          <image src="../../image/wodezhanghu.svg"></image>
+            <text class="hirs1">个人信息</text>
+          </navigator>
+      </view>
+    </view>
+  </view>
+</view>

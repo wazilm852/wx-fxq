@@ -1,0 +1,60 @@
+.main {
+  /* margin-top: 55px; */
+  width: 100%;
+  float: left;
+  margin-bottom: 25%;
+}
+
+.lishi {
+  width: 95%;
+  height: 44px;
+  margin: auto;
+  border-bottom: 1px solid #ccc;
+  padding-right: 2%;
+}
+
+.avatar{
+  width: 40px;
+  border-radius:50%;
+  overflow: hidden; 
+  height: 40px;
+  float: left;
+}
+
+.hirs1 {
+  border: 0px solid #ddd !important;
+  line-height: 44px;
+  margin-bottom: 0;
+  float: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 2%;
+  width: 100px;
+  font-size: 14px;
+  color: #333;
+}
+
+.phone {
+  font-size: 14px;
+  float: right;
+  color: #999;
+  line-height: 44px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: right;-
+  text-overflow: ellipsis;
+  width: 150px;
+}
+.add{
+  color: #fd9827;
+}
+.schedule {
+  width: 100%;
+  float: left;
+  background-color: #fff;
+  border-bottom: 1px solid #f5f5f5;
+}
+navigator:hover{
+  background: #fff;
+}

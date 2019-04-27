@@ -1,0 +1,49 @@
+/* pages/center/signature/signature.wxss */
+page{
+  background: #f4f4f4;
+}
+#signature{
+  width: 100%;
+  position: absolute;
+  bottom: 40px;
+  top:0;
+  overflow-y: scroll;
+}
+.signature{
+  width:92%;
+  margin:4% 4% 0;
+  padding:10px 0;
+  background: #fff;
+  position: relative;
+}
+.signature image{
+  width: 80%;
+  margin-left:10%;
+}
+.delete{
+  position: absolute;
+  right: 5px;
+  top:5px;
+}
+.star{
+  border-top:1px solid #f4f4f4;
+  text-indent: 4px;
+  font-size: 14px;
+  padding: 5px 0;
+}
+.star text{
+  margin-left: 4px;
+}
+.submit {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 0;
+  box-sizing: none;
+  color: #fff !important;
+  background: #fd9827 !important;
+  border: 1px solid #fd9827 !important;
+  margin: 0;
+}

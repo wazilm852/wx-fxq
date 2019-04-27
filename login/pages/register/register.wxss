@@ -1,0 +1,66 @@
+/* pages/register/register.wxss */
+ .touxiang{
+  padding-top: 20px;
+  text-align: center;
+}
+.touxiang_1{
+  width:123px;
+  height:43px;
+  margin-bottom: 30px; 
+} 
+.info{
+  height: 150px;
+}
+.code-btn{
+  width:90px;
+  height:30px;
+  font-size: 12px;
+  line-height: 30px;
+  border-radius: 0;
+  float: right;
+  box-sizing:none;
+  background: #fff;
+  color:#fd9827;
+  margin:12px 5px 0 0;
+}
+.submit{
+  width:80%;
+  height:40px;
+  line-height: 40px;
+  box-sizing:none;
+  color:#fff !important;
+  background: #fd9827 !important;
+  border:1px solid #fd9827 !important;
+  margin:50px auto 0;
+  border-radius: 20px;
+}
+
+.input,.input-code{
+  width:90%;
+  height: 55px;
+  margin:0 auto;
+  border-bottom:1px solid #eaeaea;
+}
+.input-code{
+  height: 55px;
+}
+input{
+  float: left;
+  height:55px;
+}
+.codenum{
+  width:180px;
+}
+
+.biaoyu{
+  text-align: center;
+  margin-top:40px;
+}
+.biaoyu1{
+  color:#fd9827;
+  font-size:20px;
+}
+.biaoyu2{
+  color:#ccc;
+  font-size: 14px;
+}

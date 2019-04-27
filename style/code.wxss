@@ -1,0 +1,16 @@
+.code{
+	border: none;
+	color: #FD9827;
+	float: right;
+  z-index: 888;
+	top: -60px;
+}
+.other_login{
+	margin-right: 10%;
+	float: right;
+}
+.login_other{
+	color: #FD9827;
+	cursor: pointer;
+  margin-bottom:10%;
+}

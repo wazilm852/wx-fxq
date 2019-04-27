@@ -1,0 +1,52 @@
+<!-- 合同详情页面 -->
+<!--pages/contract/detail.wxml-->
+<wxs src="../common/filter/filter.wxs" module='filter'></wxs>
+
+<view id="detail">
+  <view class="contract-detail" >
+    <view bindtap='openpdf'>
+      <image src="{{filter.httpsUrl(content.contract.fristimg)}}" class="contractimg"></image>
+    </view>
+    <view class="detail">
+      <text class="title">{{content.contract.title}}</text>
+      <text class="word">截止时间：{{filter.dateFormat(content.contract.endtime,'yyyy-MM-dd')}}</text>
+    </view>
+    <button bindtap='recall' class="action" wx:if="{{status == 1}}">撤回</button>
+    <button bindtap='reject' class="action" wx:if="{{status == 0}}">拒签</button>
+  </view>
+
+  <text class="signer-title">签署方</text>
+
+  <view wx:for="{{signers}}" wx:key="unique" wx:for-item="signer">
+    <view class="signer">
+      <view>
+        <text wx:if="{{index==0}}" class="persontype">发起人</text>
+        <text wx:else class="persontype">接收人</text>
+        <text wx:if="{{signer.level==2 || signer.level==1 || signer.level==3}}" class="success">已认证</text>
+        <text wx:else class="fail">未认证</text>
+        <text wx:if="{{signer.status==0}}" class="fail">不可签</text>
+        <text wx:elif="{{signer.status==1}}" class="ing">签署中</text>
+        <text wx:elif="{{signer.status==2}}" class="success">已签署</text>
+        <text wx:elif="{{signer.status==3 || signer.status==4}}" class="fail">拒签署</text>
+        <text wx:elif="{{signer.status==6}}" class="success">停止签署</text>
+      </view>
+      <view class="person-info">
+        <view class="avatar">
+          <image src="{{(signer.headUrl)}}"></image>
+        </view>
+        <view class="signer-detail">
+          <text class="name">{{signer.realname}} ({{signer.phone || signer.email}})</text>
+          <text class="time" wx:if="{{signer.signTime}}">签署时间:{{filter.dateFormat(signer.signTime,'yyyy-MM-dd')}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<block wx:if="{{status == 1}}">
+  <button plain class="btn clicked" wx:if="{{content.contract.flag==1 || isNotice==1}}">已提醒</button>
+  <button plain class="btn unclick" bindtap='remindAll' wx:elif="{{content.contract.flag==0}}">一键提醒所有未签署用户</button>
+</block>
+<block wx:if="{{status == 0}}">
+  <button plain class="btn unclick" bindtap='startSign'>立即签署</button>
+</block>

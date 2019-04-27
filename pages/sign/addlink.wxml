@@ -1,0 +1,26 @@
+<!--pages/sign/addlink.wxml-->
+
+<template name="contact">
+
+</template>
+
+<view class="container">
+  <view class="main">
+    <view class="xuanxiang">
+      <view class="schedule">
+        <block wx:key="unique" class="list" wx:for="{{contacter}}" bindtap="select" data-item="item">
+          <navigator open-type='redirect' url="addsigner?id={{item.id}}&nickname={{item.name}}&phone={{item.phone}}&gid={{item.groupid}}">
+            <view class="lishi">
+              <!-- wu头像用默认头像 -->
+              <!-- <image class="avatar"></image> -->
+              <image class="avatar" src='../../image/defaultavatar.svg'></image>
+              <text class="hirs1">{{item.name}}</text> 
+              <text class="phone">{{item.phone}}</text>
+              <view style='clear:both;'></view>
+            </view>
+            </navigator>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
